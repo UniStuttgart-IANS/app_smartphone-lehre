@@ -1,0 +1,672 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.uni_stuttgart.isl.Integration.MyCanvas
+                android:id="@+id/mycanvas"
+                android:layout_width="600dp"
+                android:layout_height="600dp"
+                android:background="#bababa"
+                android:textColor="#ff1c11ff" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/equi"
+                    android:layout_width="600dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="setEqui"
+                    android:text="@string/equistuetz"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp">
+
+                    <TableRow android:id="@+id/headline">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:text="Status"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:text="@string/xcoordview"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:text="@string/ycoordview"
+                            android:textSize="20sp" />
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref0">
+
+                        <Switch
+                            android:id="@+id/switch0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ycoord0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/deleter0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/buttonwhite"
+                            android:onClick="Deleter"
+                            android:text="@string/deleter"
+                            android:textColor="#FFFFFF" />
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref1">
+
+                        <Switch
+                            android:id="@+id/switch1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ycoord1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/deleter1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/buttonred"
+                            android:onClick="Deleter"
+                            android:text="@string/deleter"
+                            android:textColor="#FF0010" />
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref2">
+
+                        <Switch
+                            android:id="@+id/switch2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ycoord2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/deleter2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/buttonyellow"
+                            android:onClick="Deleter"
+                            android:text="@string/deleter"
+                            android:textColor="#FFFF00" />
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref3">
+
+                        <Switch
+                            android:id="@+id/switch3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ycoord3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/deleter3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/buttonpink"
+                            android:onClick="Deleter"
+                            android:text="@string/deleter"
+                            android:textColor="#F0A3FF" />
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref4">
+
+                        <Switch
+                            android:id="@+id/switch4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ycoord4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/deleter4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/buttoncyan"
+                            android:onClick="Deleter"
+                            android:text="@string/deleter"
+                            android:textColor="#5EF1F2" />
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref5">
+
+                        <Switch
+                            android:id="@+id/switch5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ycoord5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/deleter5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/buttonblue"
+                            android:onClick="Deleter"
+                            android:text="@string/deleter"
+                            android:textColor="#0075DC" />
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref6">
+
+                        <Switch
+                            android:id="@+id/switch6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ycoord6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/deleter6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/buttonblack"
+                            android:onClick="Deleter"
+                            android:text="@string/deleter"
+                            android:textColor="#191919" />
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref7">
+
+                        <Switch
+                            android:id="@+id/switch7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ycoord7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/deleter7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/buttonorange"
+                            android:onClick="Deleter"
+                            android:text="@string/deleter"
+                            android:textColor="#FFA405" />
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref8">
+
+                        <Switch
+                            android:id="@+id/switch8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ycoord8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/deleter8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/buttontuerkis"
+                            android:onClick="Deleter"
+                            android:text="@string/deleter"
+                            android:textColor="#00998F" />
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref9">
+
+                        <Switch
+                            android:id="@+id/switch9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ycoord9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:id="@+id/deleter9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/buttongreen"
+                            android:onClick="Deleter"
+                            android:text="@string/deleter"
+                            android:textColor="#2BCE48" />
+                    </TableRow>
+                </TableLayout>
+
+                <Button
+                    android:id="@+id/adder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="1dp"
+                    android:onClick="Adder"
+                    android:text="@string/adder"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wahl der Funktion"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/FunctionSelecter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="------------------------------------------------"
+                android:textSize="20sp" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/startPointSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="StartPunkt"
+                    android:textColor="@color/blue"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Error: "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/errorAnfangspunkt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="------------------------------------------------"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/middelPointSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MittelPunkt"
+                    android:textColor="@color/red"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Error: "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/errorMittelpunkt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="------------------------------------------------"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/trapezRegel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trapez-Regel"
+                    android:textColor="@color/green"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Error: "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/errorTrapezregel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="------------------------------------------------"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/simpsonRegel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Simpson-Regel"
+                    android:textColor="#ee19f5"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Error: "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/errorSimpsonregel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="------------------------------------------------"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="resetAll"
+                android:text="Reset All" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,125 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstrLayoutEigenwerte"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/app_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/ConstrLayoutEigenwerte"
+        app:layout_constraintEnd_toEndOf="@id/ConstrLayoutEigenwerte"
+        app:layout_constraintTop_toTopOf="@id/ConstrLayoutEigenwerte"
+        app:layout_constraintBottom_toTopOf="@id/mycanvaseigenwerte"
+        layout="@layout/app_bar" />
+
+    <com.uni_stuttgart.isl.Eigenwerte.MyCanvas
+        android:id="@+id/mycanvaseigenwerte"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/ConstrLayoutEigenwerte"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        app:layout_constraintBottom_toBottomOf="@id/ConstrLayoutEigenwerte"
+        android:paddingTop="8dp"
+        android:paddingLeft="8dp"
+        android:paddingBottom="8dp"
+        android:paddingRight="8dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:background="#bababa"
+        android:textColor="#ff1c11ff"/>
+
+
+    <ScrollView
+        android:id="@+id/EVscrollview"
+        android:layout_width="200dp"
+        android:layout_height="400dp"
+        app:layout_constraintStart_toEndOf="@id/mycanvaseigenwerte"
+        app:layout_constraintTop_toBottomOf="@id/app_bar">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+        <TextView
+            android:id="@+id/WahlAbb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Art der linearen Abbildung:"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_modus"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/discr_header"
+            android:textSize="20sp"
+            android:textColor="@color/blue"
+            android:text="Beschreibung:"/>
+
+        <com.nishant.math.MathView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/discr_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/question"
+                android:textSize="20sp"
+                android:textColor="@color/blue"
+                android:text="Frage:"/>
+
+        <Button
+            android:id="@+id/show_sol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="show_sol"
+            android:text="Zeige Lösung"
+            android:visibility="visible" />
+            <com.nishant.math.MathView
+            android:id="@+id/text_sol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/TextDegree"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+        <SeekBar
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_angel"
+            android:min="0"
+            android:progress="60"
+            android:max="360"
+            android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/TextShear"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ausmaß der Scherung"
+                android:visibility="gone"/>
+            <SeekBar
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/select_shear"
+                android:min="0"
+                android:progress="50"
+                android:max="100"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

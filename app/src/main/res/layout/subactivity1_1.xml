@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/tabContainer"
+  android:orientation="vertical"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:padding="8dp">
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+              android:textColor="@android:color/black"
+              android:gravity="center"
+              android:textSize="20dp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/introduction"
+              android:text="Taschenrechner 1.0">
+        </TextView>
+
+        <TextView
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wählen Sie zuerst die gewünschte  Rechenoperation"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Additon"
+                android:onClick="bumm"/>
+            <RadioButton
+                android:id="@+id/sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subtraktion"
+                android:onClick="bumm"/>
+            <RadioButton
+                android:id="@+id/mult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Multiplikation"
+                android:onClick="bumm"/>
+            <RadioButton
+                android:id="@+id/div"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Divison"
+                android:onClick="bumm"/>
+
+        </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Geben Sie nun die beiden Zahlen an, mit denen Sie die gewählte Rechenoperation ausführen wollen"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/num1"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="1. Zahl"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:id="@+id/special_effect"/>
+
+        <EditText
+            android:id="@+id/num2"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="2. Zahl"/>
+</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:padding="8dp"
+                android:id="@+id/button_los"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Los"
+                android:onClick="start_computing"/>
+
+            <TextView
+                android:inputType="none"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/result"
+                android:padding="8dp"/>
+        </LinearLayout>
+</LinearLayout>

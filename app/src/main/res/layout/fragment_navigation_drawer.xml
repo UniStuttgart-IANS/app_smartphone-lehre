@@ -1,0 +1,45 @@
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:background="#FFFF"
+                  tools:context=".Navigation.NavigationDrawerFragment">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:background="#FFFF"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_width="286dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_uni"
+                android:layout_marginTop="36dp">
+            </ImageView>
+            <ImageView
+                android:layout_marginLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_width="286dp"
+                android:layout_height="149dp"
+                android:src="@drawable/iansbanner_circle"
+                android:layout_marginBottom="16dp">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:background="#FFFF"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/drawerList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+    </LinearLayout>
+

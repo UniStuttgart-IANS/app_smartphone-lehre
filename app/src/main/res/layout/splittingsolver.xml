@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="0dp"
+    android:layout_marginBottom="0dp"
+    android:background="@color/white">
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+                <com.uni_stuttgart.isl.Splittingsolver.MatrixView
+                    android:id="@+id/matrixview"
+                    android:layout_width="350dp"
+                    android:layout_height="350dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#c0c0c0"
+                    android:textColor="#ff1c11ff" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                        <HorizontalScrollView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                                <com.uni_stuttgart.isl.Splittingsolver.Selecter.DiagSelecter
+                                    android:id="@+id/diagselecter"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@color/background"
+                                    />
+
+                                <com.uni_stuttgart.isl.Splittingsolver.Selecter.LowerDiagSelecter
+                                    android:id="@+id/lowerdiagselecter"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@color/background"
+                                    android:textColor="#ff1c11ff" />
+
+                                <com.uni_stuttgart.isl.Splittingsolver.Selecter.UpperDiagSelecter
+                                    android:id="@+id/upperdiagselecter"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@color/background"
+                                    android:textColor="#ff1c11ff" />
+
+                                <com.uni_stuttgart.isl.Splittingsolver.Selecter.LowerTriangleSelecter
+                                    android:id="@+id/lowertriangleselecter"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@color/background"
+                                    android:textColor="#ff1c11ff" />
+
+                                <com.uni_stuttgart.isl.Splittingsolver.Selecter.UpperTriangleSelecter
+                                    android:id="@+id/uppertriangleselecter"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@color/background"
+                                    android:textColor="#ff1c11ff"
+                                    android:layout_marginRight="8dp" />
+                        </LinearLayout>
+                        </HorizontalScrollView>
+                        <HorizontalScrollView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                                <com.uni_stuttgart.isl.Splittingsolver.Selecter.AntiDiagSelecter
+                                    android:id="@+id/antidiagselecter"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:background="@color/background"
+                                    android:textColor="#ff1c11ff" />
+
+                                <com.uni_stuttgart.isl.Splittingsolver.Selecter.LowerAntiDiagSelecter
+                                    android:id="@+id/lowerantidiagselecter"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:background="@color/background"
+                                    android:textColor="#ff1c11ff" />
+
+                                <com.uni_stuttgart.isl.Splittingsolver.Selecter.UpperAntiDiagSelecter
+                                    android:id="@+id/upperantidiagselecter"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:background="@color/background"
+                                    android:textColor="#ff1c11ff" />
+
+                                <com.uni_stuttgart.isl.Splittingsolver.Selecter.LowerAntiTriangleSelecter
+                                    android:id="@+id/lowerantitriangleselecter"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:background="@color/background"
+                                    android:textColor="#ff1c11ff" />
+
+                                <com.uni_stuttgart.isl.Splittingsolver.Selecter.UpperAntiTriangleSelecter
+                                    android:id="@+id/upperantitriangleselecter"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:background="@color/background"
+                                    android:textColor="#ff1c11ff" />
+                        </LinearLayout>
+                         </HorizontalScrollView>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/check_button"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:onClick="check"
+                                    android:text="Check it" />
+
+                                <Button
+                                    android:id="@+id/compute_button"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:onClick="play"
+                                    android:text="Do it "
+                                    android:visibility="invisible" />
+
+                                <Button
+                                    android:id="@+id/resetbutton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:onClick="resetPlot"
+                                    android:text="Reset Plot"
+                                    android:visibility="invisible" />
+
+                                <TextView
+                                    android:id="@+id/iterView"
+                                    android:layout_width="75dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="16dp"
+                                    android:text="#Iterationen:"
+                                    android:textSize="12dp" />
+
+                                <TextView
+                                    android:id="@+id/resView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="16dp"
+                                    android:text="Residuum:"
+                                    android:textSize="12dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="16dp"
+                            android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Choose your dimension:" />
+
+                                <Spinner
+                                    android:id="@+id/dimensionspinner"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="16dp"></Spinner>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Choose your matrix:" />
+
+                                <Spinner
+                                    android:id="@+id/MatrixSelecter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/Plotter"
+                            android:layout_width="628dp"
+                            android:layout_height="284dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginBottom="8dp">
+                        </RelativeLayout>
+                </LinearLayout>
+                </ScrollView>
+        </LinearLayout>
+
+        </HorizontalScrollView>
+</LinearLayout>

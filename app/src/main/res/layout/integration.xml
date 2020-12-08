@@ -1,0 +1,785 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="0dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/left_col"
+            android:orientation="vertical">
+
+            <com.uni_stuttgart.isl.Integration.MyCanvas
+                android:id="@+id/mycanvas"
+                android:layout_width="550dp"
+                android:layout_height="550dp"
+                android:background="#bababa"
+                android:textColor="#ff1c11ff" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/equi"
+                    android:layout_width="550dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="setEqui"
+                    android:text="@string/equiintervall"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        </ScrollView>
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/pointcol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="4dp">
+
+                    <TableRow android:id="@+id/headline">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:text="Status"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:text="@string/xcoordview"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:text="@string/ycoordview"
+                            android:textSize="14dp" />
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref0">
+
+                        <Switch
+                            android:paddingBottom="16dp"
+                            android:paddingTop="16dp"
+                            android:id="@+id/switch0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord0"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/ycoord0"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="14dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/deleter0"
+                            android:background="#FFFFFF"
+                            android:src="@drawable/ic_delete_grey"
+                            android:onClick="Deleter"/>
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref1">
+
+                        <Switch
+                            android:paddingBottom="16dp"
+                            android:paddingTop="16dp"
+                            android:id="@+id/switch1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/ycoord1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="14dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/deleter1"
+                            android:background="#FFFFFF"
+                            android:src="@drawable/ic_delete_red"
+                            android:onClick="Deleter"/>
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref2">
+
+                        <Switch
+                            android:paddingBottom="16dp"
+                            android:paddingTop="16dp"
+                            android:id="@+id/switch2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/ycoord2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="14dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/deleter2"
+                            android:background="#FFFFFF"
+                            android:src="@drawable/ic_delete_yellow"
+                            android:onClick="Deleter"/>
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref3">
+
+                        <Switch
+                            android:paddingBottom="16dp"
+                            android:paddingTop="16dp"
+                            android:id="@+id/switch3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/ycoord3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="14dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/deleter3"
+                            android:background="#FFFFFF"
+                            android:src="@drawable/ic_delete_pink"
+                            android:onClick="Deleter"/>
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref4">
+
+                        <Switch
+                            android:paddingBottom="16dp"
+                            android:paddingTop="16dp"
+                            android:id="@+id/switch4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/ycoord4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="14dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/deleter4"
+                            android:background="#FFFFFF"
+                            android:src="@drawable/ic_delete_cyan"
+                            android:onClick="Deleter"/>
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref5">
+
+                        <Switch
+                            android:paddingBottom="16dp"
+                            android:paddingTop="16dp"
+                            android:id="@+id/switch5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/ycoord5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="14dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/deleter5"
+                            android:background="#FFFFFF"
+                            android:src="@drawable/ic_delete_blue"
+                            android:onClick="Deleter"/>
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref6">
+
+                        <Switch
+                            android:paddingBottom="16dp"
+                            android:paddingTop="16dp"
+                            android:id="@+id/switch6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/ycoord6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="14dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/deleter6"
+                            android:background="#FFFFFF"
+                            android:src="@drawable/ic_delete_black"
+                            android:onClick="Deleter"/>
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref7">
+
+                        <Switch
+                            android:paddingBottom="16dp"
+                            android:paddingTop="16dp"
+                            android:id="@+id/switch7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/ycoord7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="14dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/deleter7"
+                            android:background="#FFFFFF"
+                            android:src="@drawable/ic_delete_orange"
+                            android:onClick="Deleter"/>
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref8">
+
+                        <Switch
+                            android:paddingBottom="16dp"
+                            android:paddingTop="16dp"
+                            android:id="@+id/switch8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/ycoord8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="14dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/deleter8"
+                            android:background="#FFFFFF"
+                            android:src="@drawable/ic_delete_tuerkis"
+                            android:onClick="Deleter"/>
+                    </TableRow>
+
+                    <TableRow android:id="@+id/pref9">
+
+                        <Switch
+                            android:paddingBottom="16dp"
+                            android:paddingTop="16dp"
+                            android:id="@+id/switch9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/xcoord9"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="8dp"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/ycoord9"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="14dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/deleter9"
+                            android:background="#FFFFFF"
+                            android:src="@drawable/ic_delete_green"
+                            android:onClick="Deleter"/>
+                    </TableRow>
+                </TableLayout>
+
+                <ImageButton
+                    android:id="@+id/addButton"
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="Adder"
+                    android:src="@drawable/ic_add"
+                    android:background="@color/white"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/optcol"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wahl der Funktion"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/FunctionSelecter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/darker_gray"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/startPointSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rechteck-Regel"
+                    android:textColor="@color/blue"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fehler: "
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/errorAnfangspunkt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/darker_gray"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/middelPointSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mittelpunkt-Regel"
+                    android:textColor="@color/red"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fehler: "
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/errorMittelpunkt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/darker_gray"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/trapezRegel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trapez-Regel"
+                    android:textColor="@color/green"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fehler: "
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/errorTrapezregel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="14dp" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/darker_gray"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/simpsonRegel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Simpson-Regel"
+                    android:textColor="#ee19f5"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fehler: "
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/errorSimpsonregel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/darker_gray"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/gaussQuadratur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gauß-Quadratur"
+                    android:textColor="#ffc400"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Ordnung: "
+                    android:textSize="16dp"/>
+                <TextView
+                    android:id="@+id/gaussDegree"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+            <SeekBar
+                android:id="@+id/gaussSeekbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="4"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fehler: "
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/errorGaussQuadratur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/darker_gray"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Optionen"
+                android:textSize="14dp"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="resetAll"
+                    android:src="@mipmap/ic_delete"
+                    android:background="@color/white"
+                    android:padding="8dp"/>
+
+                <ImageButton
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="saveActivityToLogButton"
+                    android:src="@mipmap/ic_save"
+                    android:background="@color/white"/>
+
+                <ImageButton
+                    android:padding="8dp"
+                    android:id="@+id/loadButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="loadLogButton"
+                    android:src="@mipmap/ic_restore"
+                    android:background="@color/white"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

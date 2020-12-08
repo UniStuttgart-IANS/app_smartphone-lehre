@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/app_bar_top_padding"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_app_bar"
+    android:theme="@style/MyCustomTooleBarTheme"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+    app:navigationIcon="?attr/homeAsUpIndicator" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextClock
+                android:paddingTop="10dp"
+                android:id="@+id/header_clock"
+                android:timeZone="Europe/Berlin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginLeft="50dp"
+                android:format24Hour="hh:mm:ss"
+                android:visibility="invisible"/>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:paddingStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ToolbarTextName"
+        android:textSize="18sp"
+        android:text="Name: "
+        android:visibility="invisible"
+        />
+        <TextView
+            android:paddingStart="8dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/ToolbarText"
+            android:textSize="18sp"
+             android:text="Matrikelnummer: "
+             android:visibility="invisible"
+         />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/ToolbarName"
+                android:text="Marie Musterfrau"
+                android:padding="2dp"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:textSize="18sp"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:visibility="invisible"
+                />
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/ToolbarMatNr"
+                android:padding="2dp"
+                android:text="1231231"
+                android:inputType="number"
+                android:maxLength="7"
+                android:textSize="18sp"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:visibility="invisible"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

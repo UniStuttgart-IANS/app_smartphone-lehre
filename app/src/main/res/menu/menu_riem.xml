@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:icon="@drawable/baseline_looks_4_24">
+
+    <item android:id="@+id/introduction"
+        android:title="Standardmodus"
+        app:showAsAction="always"/>
+
+</menu>

@@ -1,0 +1,335 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="0dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_marginRight="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.uni_stuttgart.isl.ZeroPoint.MyCanvas
+                android:id="@+id/mycanvas"
+                android:layout_width="500dp"
+                android:layout_height="500dp"
+                android:background="#bababa"
+                android:textColor="#ff1c11ff" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        <LinearLayout
+            android:id="@+id/optcol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="3dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wahl der Funktion:" />
+
+                <Spinner
+                    android:id="@+id/FunctionSelecter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wahl der Methode:" />
+
+                <Spinner
+                    android:id="@+id/MethodeSelecter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:padding="3dp">
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:text="Iter."
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="x_i"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="f(x_i)"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/colorTextView"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:text="Farbe"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/iterViewLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:padding="3dp">
+            <ListView
+                android:id="@+id/iterView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"></ListView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <ImageButton
+                    android:id="@+id/backwardButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="findRoot_stepbackward"
+                    android:src="@mipmap/ic_backward"
+                    android:background="@android:color/white"/>
+
+                <!--<ImageButton
+                    android:id="@+id/playButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="findRoot"
+                    android:src="@drawable/ic_play" />-->
+
+                <ImageButton
+                    android:id="@+id/pauseButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="pausefindingroot"
+                    android:src="@mipmap/ic_pause"
+                    android:background="@android:color/white"/>
+
+                <ImageButton
+                    android:id="@+id/forwardButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="findRoot_stepforward"
+                    android:src="@mipmap/ic_forward"
+                    android:background="@android:color/white"/>
+
+
+                <ImageButton
+                    android:id="@+id/stopButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="stopfindingroot"
+                    android:src="@mipmap/ic_delete"
+                    android:background="@android:color/white"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animation:" />
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/animationRadioGroup">
+
+                <RadioButton
+                    android:id="@+id/radioButtonWithoutAnimation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="true"
+                    android:onClick="onRadioButtonAnamationSpeedClicked"
+                    android:text="Ohne" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSlowAnimation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonAnamationSpeedClicked"
+                    android:text="Langsam" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonFastAnimation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonAnamationSpeedClicked"
+                    android:text="Schnell" />
+            </RadioGroup>
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingLeft="8dp"-->
+            <!--android:paddingRight="8dp"-->
+            <!--android:text="|"-->
+            <!--android:textSize="20dp" />-->
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <RadioButton
+                    android:id="@+id/radioButtonAutoAnimation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:enabled="true"
+                    android:onClick="onRadioButtonAnamationStepClicked"
+                    android:text="Automatisch" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonManuBroadlyAnimation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:enabled="true"
+                    android:onClick="onRadioButtonAnamationStepClicked"
+                    android:text="Manuell \n (grob)" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonManuFineAnimation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:enabled="true"
+                    android:onClick="onRadioButtonAnamationStepClicked"
+                    android:text="Manuell \n (fein)" />
+            </RadioGroup>
+            <!--</LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Genauigkeit: " />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TextViewAccuracy"/>
+            </LinearLayout>
+            <SeekBar
+                android:id="@+id/SeekBarAccuracy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:max="0" />
+
+            <!--<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonAccuracy1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:enabled="true"
+                    android:onClick="onRadioButtonAccuracyClecked"
+                    android:text="1e-2" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonAccuracy2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="true"
+                    android:onClick="onRadioButtonAccuracyClecked"
+                    android:text="1e-3" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonAccuracy3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="true"
+                    android:checked="true"
+                    android:onClick="onRadioButtonAccuracyClecked"
+                    android:text="1e-4" />
+            </RadioGroup>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weitere Optionen:" />
+
+            <CheckBox
+                android:id="@+id/checkBoxCoordMarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckboxClickedMarks"
+                android:text="Koordinatenanzeige" />
+
+            <CheckBox
+                android:id="@+id/checkBoxDrawAlliterations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckboxClickedDrawIters"
+                android:text="Alle Iterierten zeichnen" />
+
+
+        </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

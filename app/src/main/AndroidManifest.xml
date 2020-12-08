@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.uni_stuttgart.isl">
+
+    <application
+        android:allowBackup="true"
+        android:configChanges="orientation|keyboardHidden"
+        android:icon="@mipmap/ic_launcher_isl"
+        android:label="@string/app_name"
+        android:screenOrientation="sensorLandscape"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".Intros.Intro_App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="sensorLandscape" />
+
+        <activity
+            android:name=".Intros.Intro_Interpolation"
+            android:screenOrientation="sensorLandscape">
+
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Interpolation.InterUApprox"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_sub"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".Intros.Intro_Integration"
+            android:label="@string/title_activity_sub_activity3"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Integration.Integration"
+            android:label="@string/title_activity_sub_activity3"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".Intros.Intro_SplittingSolver"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Splittingsolver.Splittingsolver"
+            android:label="@string/title_activity_sub_activity2"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+
+
+        <activity
+            android:name=".Intros.Intro_Zerofinding"
+            android:label="@string/title_activity_sub_activity4"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ZeroPoint.Zerofinding"
+            android:label="@string/title_activity_sub_activity4"
+            android:screenOrientation="sensorLandscape">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+
+
+        <activity
+            android:name=".GaussianSolver.Gaussian"
+            android:label="@string/title_activity_gauss"
+            android:screenOrientation="sensorLandscape">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Intros.Intro_Gaussian"
+            android:label="@string/title_activity_gauss"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+
+
+        <activity
+            android:name=".Intros.Intro_Eigenwerte"
+            android:label="@string/title_activity_sub_activity7"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Eigenwerte.Eigenwerte"
+            android:label="@string/title_activity_sub_activity7"
+            android:screenOrientation="sensorLandscape">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".Intros.Intro_EliminateLGS"
+            android:label="@string/title_activity_sub_activity5"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+        <activity
+            android:name=".EliminateLGS.EliminateLGS"
+            android:label="@string/title_activity_sub_activity5"
+            android:screenOrientation="sensorLandscape">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+
+
+        <activity
+            android:name=".Intros.Intro_Riemann"
+            android:label="@string/title_activity_riemann"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+       <activity
+            android:name=".Riemann.Riemann"
+           android:label="@string/title_activity_riemann"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.uni_stuttgart.isl.MainActivity" />
+        </activity>
+        <!-- <activity
+            android:name=".Riemann.Riemann"
+            android:label="@string/title_activity_riemann"
+            android:theme="@style/AppTheme.NoActionBar"></activity> -->
+    </application>
+
+</manifest>
