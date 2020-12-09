@@ -8,8 +8,6 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
@@ -24,6 +22,9 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
@@ -168,7 +169,7 @@ public class Splittingsolver extends AppCompatActivity {
         mChart = new LineChart(this);
         mainLayout.addView(mChart, new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.MATCH_PARENT));
 
-        mChart.setNoDataTextDescription("No data for the moment!");
+        mChart.setNoDataText("No data for the moment!");
 
         mChart.setHighlightPerTapEnabled(true);
         mChart.setTouchEnabled(true);
@@ -756,9 +757,9 @@ public class Splittingsolver extends AppCompatActivity {
         mChart = new LineChart(this);
         mainLayout.addView(mChart, new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.MATCH_PARENT));
 
-        mChart.setDescription(" ");
+//        mChart.setDescription(" ");
 
-        mChart.setNoDataTextDescription("No data for the moment!");
+        mChart.setNoDataText("No data for the moment!");
 
         mChart.setHighlightPerTapEnabled(true);
         mChart.setTouchEnabled(true);
@@ -987,7 +988,7 @@ public class Splittingsolver extends AppCompatActivity {
                 data.addDataSet(set);
             }
 
-            data.addXValue("");
+//            data.addXValue("");
             data.addEntry(new com.github.mikephil.charting.data.Entry((float) res, set.getEntryCount()), 0);
 
 
@@ -995,13 +996,13 @@ public class Splittingsolver extends AppCompatActivity {
 
             mChart.setVisibleXRangeMaximum(10000);
 
-            mChart.moveViewToX(data.getXValCount() - 10001);
+            mChart.moveViewToX(data.getEntryCount() - 10001);
         }
     }
 
     private LineDataSet createSet() {
         LineDataSet set = new LineDataSet(null, "Residuum");
-        set.setDrawCubic(false);
+//        set.setDrawCubic(false);
 //        set.setCubicIntensity(0.2F);
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
 //        set.setValueTextColor(ColorTemplate.getHoloBlue());
@@ -1037,9 +1038,9 @@ public class Splittingsolver extends AppCompatActivity {
 
         mainLayout.addView(mChart, new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.MATCH_PARENT));
 
-        mChart.setDescription(" ");
+//        mChart.setDescription(" ");
 
-        mChart.setNoDataTextDescription("No data for the moment!");
+        mChart.setNoDataText("No data for the moment!");
 
         mChart.setHighlightPerTapEnabled(true);
         mChart.setTouchEnabled(true);
